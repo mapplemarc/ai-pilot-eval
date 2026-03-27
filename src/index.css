@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", serif;
+  --color-rsm-teal-dark: #0A3D4E;
+  --color-rsm-teal: #145A6E;
+  --color-rsm-teal-light: #1E7A8E;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 font-sans antialiased;
+  }
+}
+
+.rsm-gradient {
+  background: radial-gradient(circle at 50% 30%, var(--color-rsm-teal) 0%, var(--color-rsm-teal-dark) 100%);
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl;
+}
+
+.chat-bubble-agent {
+  @apply bg-slate-50 border border-slate-100 text-slate-800 rounded-2xl rounded-tl-none shadow-sm;
+}
+
+.chat-bubble-user {
+  @apply bg-rsm-teal text-white rounded-2xl rounded-tr-none shadow-md;
+}
+
+.progress-dot {
+  @apply w-2 h-2 rounded-full transition-all duration-500;
+}
+
+.progress-dot-active {
+  @apply bg-white w-6;
+}
+
+.progress-dot-inactive {
+  @apply bg-white/30;
+}
+
+.progress-dot-completed {
+  @apply bg-emerald-400;
+}
